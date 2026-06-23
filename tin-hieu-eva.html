@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tín Hiệu Eva - Vì Phụ Nữ Việt Khỏe Mạnh</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #e11d74;
+            --secondary-color: #fff0f5;
+            --text-dark: #333333;
+            --text-muted: #666666;
+            --border-light: #f3c2d3;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* --- Section Common Styles --- */
+        .section {
+            padding: 35px 20px;
+            text-align: center;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .section-subtitle {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+        }
+
+        /* --- 1. HERO BANNER - CHIA 2 CỘT --- */
+        .hero-banner {
+            background: radial-gradient(circle at top right, #fff0f6 0%, #ffffff 100%);
+            padding: 30px 20px 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            flex: 1.2; 
+            text-align: left;
+            z-index: 2;
+        }
+        
+        .hero-img-wrapper {
+            flex: 1;
+            z-index: 1;
+            display: flex;
+            align-items: flex-end;
+        }
+        .hero-img-wrapper img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .badge-tag {
+            background: var(--primary-color);
+            color: white;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+        .hero-title {
+            color: var(--primary-color);
+            font-size: 20px;
+            font-weight: 800;
+            line-height: 1.25;
+            margin-bottom: 8px;
+        }
+        .hero-subtitle {
+            font-size: 11px;
+            font-weight: 700;
+            color: #444;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            line-height: 1.3;
+        }
+        .hero-desc {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            text-align: justify;
+            line-height: 1.4;
+        }
+        .hero-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        .feat-item {
+            font-size: 9.5px;
+            font-weight: 600;
+            color: #444;
+            line-height: 1.2;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .feat-icon {
+            color: var(--primary-color);
+            font-size: 12px;
+        }
+        .hero-btns {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .btn-main {
+            display: block;
+            text-align: center;
+            background: var(--primary-color);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 25px;
+            font-size: 11px;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            box-shadow: 0 4px 12px rgba(225, 29, 116, 0.2);
+            border: none;
+            cursor: pointer;
+        }
+        .btn-sub {
+            display: block;
+            text-align: center;
+            background: white;
+            color: var(--primary-color);
+            padding: 9px 15px;
+            border-radius: 25px;
+            font-size: 11px;
+            font-weight: 700;
+            text-decoration: none;
+            border: 1px solid var(--primary-color);
+            text-transform: uppercase;
+        }
+
+        /* --- 2. CHIẾN DỊCH INFOGRAPHIC - CHIA 2 CỘT NGANG NHAU --- */
+        .campaign-info {
+            background-color: #ffffff;
+            padding: 35px 20px;
+        }
+        .campaign-title {
+            color: var(--primary-color); 
+            font-size: 18px; 
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        .campaign-body {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .campaign-text {
+            flex: 1;
+            font-size: 13px;
+            color: #444;
+            text-align: justify;
+        }
+        .campaign-text p {
+            margin-bottom: 12px;
+        }
+        .campaign-text p:last-child {
+            margin-bottom: 0;
+        }
+        .info-box {
+            flex: 1.1;
+            background-color: #fffcfd;
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 15px;
+        }
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .info-item:last-child { margin-bottom: 0; }
+        .info-icon {
+            font-size: 20px;
+            margin-right: 12px;
+            width: 24px;
+            text-align: center;
+        }
+        .info-text strong {
+            display: block;
+            font-size: 13px;
+            color: var(--primary-color);
+        }
+        .info-text span {
+            font-size: 12px;
+            color: var(--text-dark);
+        }
+
+        /* --- 3. THỐNG KÊ UNG THƯ --- */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .stats-card {
+            background: #ffffff;
+            border: 1px solid #f5f5f5;
+            border-radius: 8px;
+            padding: 15px 10px;
+            box-shadow: 0 4px 10px rgba(225, 29, 116, 0.04);
+        }
+        .stats-number {
+            color: var(--primary-color);
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        .stats-desc {
+            font-size: 12px;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        /* --- 4. FORM ĐĂNG KÝ --- */
+        .registration-section {
+            background: linear-gradient(180deg, #ffffff 0%, var(--secondary-color) 100%);
+            border-top: 2px dashed var(--border-light);
+            border-bottom: 2px dashed var(--border-light);
+            padding: 35px 20px;
+        }
+        .form-container {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 25px 20px;
+            box-shadow: 0 10px 25px rgba(225, 29, 116, 0.1);
+        }
+        .form-intro-text {
+            font-size: 13.5px;
+            color: #444;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        .input-group {
+            margin-bottom: 14px;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+        }
+        .input-group input:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 8px rgba(225, 29, 116, 0.15);
+        }
+        button#submitBtn {
+            width: 100%;
+            padding: 15px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(225, 29, 116, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: background 0.3s ease;
+            margin-top: 10px;
+        }
+        button#submitBtn:hover { background: #c8105c; }
+        button:disabled { background: #ccc !important; box-shadow: none !important; cursor: not-allowed; }
+
+        /* --- 5. HOẠT ĐỘNG NỔI BẬT --- */
+        .activities-list {
+            text-align: left;
+            padding: 0 10px;
+        }
+        .activity-item {
+            display: flex;
+            margin-bottom: 20px;
+            background: #fffcfd;
+            padding: 12px;
+            border-radius: 8px;
+        }
+        .activity-icon {
+            font-size: 22px;
+            margin-right: 15px;
+            margin-top: 2px;
+        }
+        .activity-title {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--primary-color);
+            margin-bottom: 3px;
+        }
+        .activity-desc {
+            font-size: 12.5px;
+            color: var(--text-muted);
+        }
+
+        /* --- 6. ĐỐI TÁC ĐỒNG HÀNH --- */
+        .partners-section {
+            background: #fafafa;
+            padding-bottom: 40px;
+        }
+
+        /* --- POPUP OVERLAY TẦM SOÁT THÔNG BÁO --- */
+        #popup-overlay {
+            display: none; 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6); 
+            z-index: 10000; 
+            justify-content: center; 
+            align-items: center;
+        }
+        #popup-content {
+            background: white; 
+            padding: 35px 25px; 
+            border-radius: 16px; 
+            text-align: center;
+            width: 85%; 
+            max-width: 380px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2); 
+            position: relative;
+        }
+        #popup-content h3 { 
+            color: var(--primary-color); 
+            font-size: 20px; 
+            font-weight: 700; 
+            margin-bottom: 12px;
+        }
+        #popup-content p { 
+            line-height: 1.5; 
+            color: #444; 
+            font-size: 14.5px; 
+            margin-bottom: 25px;
+        }
+        .btn-close-popup {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 30px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(225, 29, 116, 0.2);
+            transition: background 0.3s ease;
+        }
+        .btn-close-popup:hover {
+            background: #c8105c;
+        }
+
+        /* Tối ưu hiển thị responsive */
+        @media (max-width: 480px) {
+            .campaign-body {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .hero-banner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .hero-features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="hero-banner">
+        <div class="hero-content">
+            <div class="badge-tag">TÍN HIỆU EVA 💝</div>
+            <h1 class="hero-title">VÌ PHỤ NỮ VIỆT<br>KHỎE MẠNH</h1>
+            <h2 class="hero-subtitle">CHUNG TAY PHÁT HIỆN SỚM UNG THƯ PHỤ KHOA</h2>
+            
+            <p class="hero-desc">
+                Gene Solutions | Spotmas-Eva cùng cộng đồng nâng cao nhận thức, khuyến khích tầm soát sớm.
+            </p>
+
+            <div class="hero-features">
+                <div class="feat-item"><span class="feat-icon">🛡️</span>Phát hiện sớm</div>
+                <div class="feat-item"><span class="feat-icon">🧪</span>Xét nghiệm nhanh</div>
+                <div class="feat-item"><span class="feat-icon">🔒</span>Bảo mật tuyệt đối</div>
+                <div class="feat-item"><span class="feat-icon">❤️</span>Vì phụ nữ Việt</div>
+            </div>
+
+            <div class="hero-btns">
+                <a href="#register-block" class="btn-main">ĐĂNG KÝ TẦM SOÁT</a>
+                <a href="#about-block" class="btn-sub">TÌM HIỂU THÊM</a>
+            </div>
+        </div>
+
+        <div class="hero-img-wrapper">
+            <img src="https://i.ibb.co/KpSy32jq/Screenshot-2026-06-23-at-16-52-50.png" alt="Vì Phụ Nữ Việt Khỏe Mạnh">
+        </div>
+    </div>
+
+    <div id="about-block" class="campaign-info">
+        <h2 class="campaign-title">VỀ CHIẾN DỊCH 💕</h2>
+        
+        <div class="campaign-body">
+            <div class="campaign-text">
+                <p><strong>"Tín hiệu EVA"</strong> là chiến dịch CSR do Gene Solutions | Spotmas-Eva khởi xướng với mong muốn nâng cao nhận thức cộng đồng về ung thư phụ khoa và tầm quan trọng của việc tầm soát sớm.</p>
+                <p>Chúng tôi tin rằng, mỗi người phụ nữ được phát hiện sớm – là một cơ hội sống khỏe mạnh và hạnh phúc hơn cho chính mình và những người thân yêu.</p>
+            </div>
+            
+            <div class="info-box">
+                <div class="info-item">
+                    <div class="info-icon">🕒</div>
+                    <div class="info-text">
+                        <strong>Thời gian triển khai</strong>
+                        <span>01/07/2026 – 31/12/2026</span>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">📍</div>
+                    <div class="info-text">
+                        <strong>Phạm vi địa lý</strong>
+                        <span>20 tỉnh thành từ Quảng Trị đến Cà Mau</span>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">👥</div>
+                    <div class="info-text">
+                        <strong>Đối tượng hướng đến</strong>
+                        <span>Phụ nữ trong độ tuổi 30 – 50</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" style="background-color: #fffcfd;">
+        <h2 class="section-title">UNG THƯ PHỤ KHOA – ĐỪNG CHỦ QUAN!</h2>
+        <div class="section-subtitle">Phát hiện sớm – Điều trị hiệu quả – Nâng cao chất lượng cuộc sống</div>
+        
+        <div class="stats-grid">
+            <div class="stats-card">
+                <div class="stats-number">&gt;6.000</div>
+                <div class="stats-desc">Phụ nữ Việt được chẩn đoán mắc mới ung thư cổ tử cung mỗi năm</div>
+            </div>
+            <div class="stats-card">
+                <div class="stats-number">&gt;2.500</div>
+                <div class="stats-desc">Ca tử vong do ung thư cổ tử cung mỗi năm</div>
+            </div>
+            <div class="stats-card">
+                <div class="stats-number">&gt;90%</div>
+                <div class="stats-desc">Tỷ lệ chữa khỏi hoàn toàn nếu phát hiện ở giai đoạn sớm</div>
+            </div>
+            <div class="stats-card">
+                <div class="stats-number">30 – 50</div>
+                <div class="stats-desc">Độ tuổi vàng để tầm soát và bảo vệ sức khỏe phụ khoa</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="register-block" class="registration-section">
+        <div class="form-container">
+            <h2 style="color: var(--primary-color); font-size: 18px; text-align: center; font-weight: 700; margin-bottom: 10px;">ĐĂNG KÝ TẦM SOÁT NGAY</h2>
+            <p class="form-intro-text">
+                Hãy chủ động bảo vệ sức khỏe của bản thân. Điền thông tin chính xác bên dưới để nhận gói hỗ trợ tầm soát sớm từ chiến dịch <strong>Tín Hiệu Eva</strong>.
+            </p>
+            
+            <form id="eva-lead-form">
+                <div class="input-group">
+                    <input type="text" name="name" placeholder="Họ và tên" required>
+                </div>
+                
+                <div class="input-group">
+                    <input type="tel" name="phone" placeholder="Số điện thoại" pattern="[0-9]{10,11}" required>
+                </div>
+                
+                <div class="input-group">
+                    <input type="number" name="age" placeholder="Tuổi" min="18" max="100" required>
+                </div>
+                
+                <input type="hidden" name="utm_source" id="utm_source">
+                <input type="hidden" name="utm_medium" id="utm_medium">
+                <input type="hidden" name="utm_campaign" id="utm_campaign">
+                
+                <button type="submit" id="submitBtn">ĐĂNG KÝ TẦM SOÁT NGAY</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">HOẠT ĐỘNG NỔI BẬT CỦA CHIẾN DỊCH</h2>
+        <div class="section-subtitle">Cùng nhau tạo nên thay đổi tích cực trong cộng đồng</div>
+        
+        <div class="activities-list">
+            <div class="activity-item">
+                <div class="activity-icon">📢</div>
+                <div>
+                    <div class="activity-title">Truyền thông nâng cao nhận thức</div>
+                    <div class="activity-desc">Chia sẻ kiến thức đúng để hiểu rõ về ung thư phụ khoa và tầm quan trọng của việc tầm soát sớm.</div>
+                </div>
+            </div>
+            <div class="activity-item">
+                <div class="activity-icon">📋</div>
+                <div>
+                    <div class="activity-title">Ưu đãi xét nghiệm tầm soát</div>
+                    <div class="activity-desc">Hỗ trợ chi phí xét nghiệm Spotmas-Eva cho phụ nữ trong độ tuổi nguy cơ.</div>
+                </div>
+            </div>
+            <div class="activity-item">
+                <div class="activity-icon">📍</div>
+                <div>
+                    <div class="activity-title">Chuỗi sự kiện cộng đồng</div>
+                    <div class="activity-desc">Hội thảo, talkshow kết hợp khám tư vấn miễn phí tại các địa phương.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section partners-section">
+        <h2 class="section-title" style="font-size: 16px;">ĐỐI TÁC ĐỒNG HÀNH</h2>
+        <div class="section-subtitle">Cùng chung tay vì sức khỏe phụ nữ Việt</div>
+        <p style="font-size: 13px; color: #777; font-weight: 600; letter-spacing: 0.5px;">BANCA • VINMEC • MEDLATEC • BỆNH VIỆN TỪ DŨ • HỘI PHỤ NỮ</p>
+    </div>
+
+</div>
+
+<div id="popup-overlay">
+    <div id="popup-content">
+        <h3>Đăng ký thành công!</h3>
+        <p>Thông tin của bạn đã được ghi nhận vào hệ thống.<br>Ban tổ chức chiến dịch sẽ liên hệ hỗ trợ bạn trong thời gian sớm nhất. Xin cảm ơn!</p>
+        <button type="button" class="btn-close-popup" id="btnClosePopup">Đóng</button>
+    </div>
+</div>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyjHrkvUiHy4j1xiNzFKbgmvNAvDQJywyRi6EpZcF2aIlNXPKYxZoNgu03yC1rr6Sys/exec';
+        
+        const form = document.getElementById('eva-lead-form');
+        const btn = document.getElementById('submitBtn');
+        const overlay = document.getElementById('popup-overlay');
+        const btnClosePopup = document.getElementById('btnClosePopup');
+
+        function getParam(name) {
+            let urlParams = new URLSearchParams(window.location.search);
+            if (!urlParams.has(name)) {
+                try {
+                    urlParams = new URLSearchParams(window.top.location.search);
+                } catch (e) {}
+            }
+            return urlParams.get(name) || '';
+        }
+
+        document.getElementById('utm_source').value = getParam('utm_source');
+        document.getElementById('utm_medium').value = getParam('utm_medium');
+        document.getElementById('utm_campaign').value = getParam('utm_campaign');
+
+        // Sự kiện click nút Đóng trên Popup
+        btnClosePopup.addEventListener('click', () => {
+            overlay.style.display = 'none';
+            form.reset(); // Xoá sạch data cũ sau khi đăng ký thành công
+            btn.disabled = false;
+            btn.innerText = 'ĐĂNG KÝ TẦM SOÁT NGAY';
+        });
+
+        if (form) {
+            form.addEventListener('submit', e => {
+                e.preventDefault();
+                btn.disabled = true;
+                btn.innerText = 'Đang gửi...';
+                
+                const formData = new FormData(form);
+                const params = new URLSearchParams();
+                formData.forEach((value, key) => params.append(key, value));
+
+                fetch(scriptURL, { 
+                    method: 'POST', 
+                    mode: 'no-cors', 
+                    body: params.toString(),
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+                })
+                .then(() => { overlay.style.display = 'flex'; })
+                .catch(() => { overlay.style.display = 'flex'; });
+            });
+        }
+    });
+</script>
+</body>
+</html>
