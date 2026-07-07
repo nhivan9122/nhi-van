@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Tín Hiệu EVA - Chung Tay Tầm Soát Ung Thư Phụ Khoa</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -14,7 +13,8 @@
                         evaPink: '#E5217B',
                         evaBlue: '#00A1E4',
                         evaDarkBlue: '#0A3975',
-                        evaSoftBg: '#FDF9FA'
+                        evaSoftBg: '#FDF9FA',
+                        evaLightPurple: '#F4EBF7'
                     },
                     fontFamily: {
                         sans: ['Montserrat', 'sans-serif'],
@@ -31,52 +31,51 @@
     </style>
 </head>
 <body class="bg-evaSoftBg text-slate-700 antialiased overflow-x-hidden selection:bg-pink-100 selection:text-evaPink">
-
-    <!-- GLOBAL TOP ANNOUNCEMENT -->
-    <div class="w-full bg-gradient-to-r from-evaPink to-purple-600 text-white text-[10px] md:text-xs font-semibold py-2.5 px-4 text-center tracking-widest uppercase sticky top-0 z-50 shadow-sm">
-        Hành trình nhân văn vì sức khỏe và hạnh phúc của phụ nữ Việt Nam
-    </div>
     
-    <!-- BRANDING HEADER -->
-    <header class="bg-white/70 backdrop-blur-md border-b border-pink-100/30 relative z-40">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
-            <div class="font-extrabold text-sm md:text-base tracking-widest text-evaDarkBlue">GENE <span class="text-evaBlue">SOLUTIONS</span></div>
-            <div class="flex items-center gap-2 bg-pink-50/80 px-3.5 py-1 rounded-full border border-pink-200/20 shadow-3xs">
-                <span class="font-bold text-[10px] text-evaPink tracking-widest uppercase">💝 SPOT-MAS EVA</span>
-            </div>
+    <header class="bg-white/70 backdrop-blur-md border-b border-pink-100/30 relative z-40 sticky top-0 shadow-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
+            <a href="#" class="block">
+                <img src="https://genesolutions.vn/wp-content/uploads/2024/05/gs-logo-tagline.svg" alt="Gene Solutions Logo" class="h-8 md:h-10 w-auto object-contain">
+            </a>
+            <div></div>
         </div>
     </header>
 
-    <!-- SECTION 1: HERO SECTION -->
-    <section class="py-10 md:py-24 bg-white relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <section class="py-8 md:py-16 bg-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
-            <div class="lg:col-span-7 space-y-6 text-center lg:text-left order-1">
+            <div class="lg:col-span-7 space-y-4 text-center lg:text-left order-1">
                 <span class="inline-block text-evaPink font-bold text-[10px] md:text-[11px] tracking-widest uppercase bg-pink-50 px-3 py-1 rounded-md">
                     Chiến dịch CSR Toàn Quốc (01/07/2026 – 31/12/2026)
                 </span>
-                <h1 class="text-3xl sm:text-4xl md:text-6xl font-black text-evaDarkBlue tracking-tight leading-tight uppercase">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-evaDarkBlue tracking-tight leading-none uppercase">
                     Tín Hiệu <span class="text-evaPink font-serif italic font-normal normal-case">Eva</span>
                 </h1>
-                <div class="text-xl sm:text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-evaPink to-purple-600 leading-tight">
-                    Chung tay tầm soát UNG THƯ PHỤ KHOA <br class="hidden sm:inline">Vì sức khỏe phụ nữ Việt
+                <div class="text-lg sm:text-xl md:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-evaPink to-purple-600 leading-tight">
+                    Chủ Động Lắng Nghe Cơ Thể <br class="hidden sm:inline"> Cẩm Nang Toàn Diện Về Ung Thư Phụ Khoa
                 </div>
                 <p class="text-slate-400 text-xs md:text-sm leading-relaxed max-w-xl mx-auto lg:mx-0 font-medium">
                     Đồng hành cùng cộng đồng đẩy lùi ung thư phụ khoa. Chủ động tầm soát sớm hôm nay để bảo vệ nụ cười và hạnh phúc trọn vẹn của người phụ nữ bạn yêu thương.
                 </p>
                 
-                <div class="flex flex-col sm:flex-row gap-3.5 pt-4 justify-center lg:justify-start">
-                    <a href="#register-block" class="w-full sm:w-auto bg-gradient-to-r from-evaPink to-pink-600 text-white font-bold px-8 py-4 rounded-xl text-xs uppercase tracking-widest shadow-lg shadow-pink-500/10 hover:opacity-95 transition text-center min-h-[48px] flex items-center justify-center">
+                <div class="block lg:hidden my-4">
+                    <div class="relative rounded-2xl overflow-hidden shadow-xl shadow-pink-900/5 bg-slate-50 border border-slate-100 mx-auto max-w-xs sm:max-w-sm">
+                        <img src="https://i.ibb.co/8J95wfk/z8003815086125-0d6780244c6de2e2ca854fd2fff76a3a.jpg" alt="Tín Hiệu EVA - Gene Solutions" class="w-full h-auto object-cover">
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-3 pt-1 justify-center lg:justify-start">
+                    <a href="#register-block" class="w-full sm:w-auto bg-gradient-to-r from-evaPink to-pink-600 text-white font-bold px-6 py-3.5 rounded-xl text-xs uppercase tracking-widest shadow-md shadow-pink-500/10 hover:opacity-95 transition text-center flex items-center justify-center">
                         Nhận tư vấn miễn phí
                     </a>
-                    <a href="#facts" class="w-full sm:w-auto bg-slate-50 text-slate-500 font-semibold px-8 py-4 rounded-xl text-xs tracking-widest uppercase hover:bg-slate-100 border border-slate-100/80 transition text-center min-h-[48px] flex items-center justify-center">
-                        Tìm hiểu số liệu thực trạng
+                    <a href="#facts" class="w-full sm:w-auto bg-slate-50 text-slate-500 font-semibold px-6 py-3.5 rounded-xl text-xs tracking-widest uppercase hover:bg-slate-100 border border-slate-100/80 transition text-center flex items-center justify-center">
+                       Giải mã các số liệu
                     </a>
                 </div>
             </div>
 
-            <div class="lg:col-span-5 order-2">
-                <div class="relative rounded-[2.5rem] overflow-hidden shadow-2xl shadow-pink-900/5 bg-slate-50 border border-slate-100">
+            <div class="hidden lg:block lg:col-span-5 order-2">
+                <div class="relative rounded-[2rem] overflow-hidden shadow-xl shadow-pink-900/5 bg-slate-50 border border-slate-100">
                     <img src="https://i.ibb.co/8J95wfk/z8003815086125-0d6780244c6de2e2ca854fd2fff76a3a.jpg" alt="Tín Hiệu EVA - Gene Solutions" class="w-full h-auto object-cover">
                 </div>
             </div>
@@ -84,81 +83,59 @@
         </div>
     </section>
 
-    <!-- SECTION 2: CAMPAIGN VIDEO -->
-    <section class="py-14 md:py-24 bg-white border-t border-slate-100/80">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-            <h2 class="text-2xl md:text-4xl font-extrabold text-evaDarkBlue tracking-tight">
-                Thước Phim Chiến Dịch: <span class="font-serif italic font-normal text-evaPink capitalize">Lan Tỏa Yêu Thương</span>
-            </h2>
-            <p class="text-slate-400 font-medium text-xs md:text-sm mt-3 max-w-lg mx-auto leading-relaxed">
-                Lắng nghe những câu chuyện thực tế, thông điệp ý nghĩa từ đội ngũ chuyên gia đầu ngành trong hành trình bảo vệ một nửa thế giới.
-            </p>
-            
-            <div class="mt-8 md:mt-14 relative rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl shadow-pink-900/5 bg-slate-900 aspect-[16/9] border-[4px] md:border-[10px] border-white">
-                <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/xRoL8Cpc5Uk" title="Tín hiệu EVA Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 3: MEDICAL FACT -->
-    <section id="facts" class="py-16 md:py-28 bg-slate-50 relative border-b border-slate-100">
+    <section id="facts" class="py-12 md:py-20 bg-gradient-to-br from-[#FAF6FC] via-evaLightPurple to-[#EFE1F5] relative border-b border-purple-100/60">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
             
-            <div class="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-                <h2 class="text-xl sm:text-2xl md:text-4xl font-black text-evaDarkBlue tracking-tight leading-tight uppercase">
+            <div class="text-center max-w-3xl mx-auto mb-8 md:mb-12">
+                <h2 class="text-lg sm:text-xl md:text-3xl font-black text-evaDarkBlue tracking-tight leading-tight uppercase">
                     UNG THƯ PHỤ KHOA VẪN LÀ GÁNH NẶNG SỨC KHỎE ĐÁNG KỂ ĐỐI VỚI PHỤ NỮ
                 </h2>
-                <p class="text-[9px] md:text-[10px] text-red-500 font-bold tracking-widest uppercase mt-4 bg-red-50 inline-block px-3 py-1 rounded-md border border-red-100/50">
-                    ⚠️ Nhiều phụ nữ chỉ được phát hiện khi bệnh đã ở giai đoạn muộn
-                </p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <!-- CỤM THẺ 1 -->
-                <div class="bg-white p-6 md:p-10 rounded-[2.5rem] shadow-xs flex flex-col justify-between border border-slate-100">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="bg-white p-5 md:p-8 rounded-[2rem] shadow-sm flex flex-col justify-between border border-purple-100/50">
                     <div>
-                        <div class="flex items-center justify-between border-b border-pink-100 pb-4 mb-6">
+                        <div class="flex items-center justify-between border-b border-pink-100 pb-3 mb-4">
                             <h3 class="text-xs md:text-sm font-extrabold text-evaPink tracking-wider uppercase">🌸 Ung Thư Cổ Tử Cung</h3>
                             <span class="text-[9px] font-bold text-evaPink bg-pink-50 px-2.5 py-0.5 rounded uppercase">Phổ biến nhất toàn cầu</span>
                         </div>
                         
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="bg-slate-50 p-4 rounded-xl">
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 text-center sm:text-left">
                                 <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Mắc mới mỗi năm</span>
-                                <span class="text-xl md:text-3xl font-black text-slate-800 block mt-1">604.000</span>
+                                <span class="text-2xl sm:text-3xl md:text-4xl font-black text-evaDarkBlue block mt-1 tracking-tight">604.<span class="text-evaPink">000</span></span>
                             </div>
-                            <div class="bg-slate-50 p-4 rounded-xl">
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 text-center sm:text-left">
                                 <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Tử vong mỗi năm</span>
-                                <span class="text-xl md:text-3xl font-black text-slate-800 block mt-1">342.000</span>
+                                <span class="text-2xl sm:text-3xl md:text-4xl font-black text-slate-800 block mt-1 tracking-tight">342.<span class="text-slate-400">000</span></span>
                             </div>
-                            <div class="col-span-2 bg-pink-50/40 p-4 rounded-xl border border-pink-100/30">
+                            <div class="col-span-2 bg-pink-50/40 p-3 rounded-lg border border-pink-100/30">
                                 <span class="text-[10px] font-bold text-evaPink uppercase tracking-wider block">Nguyên nhân cốt lõi</span>
-                                <span class="text-base md:text-lg font-bold text-slate-700 block mt-0.5">95% liên quan đến nhiễm 14 type HPV nguy cơ cao</span>
+                                <span class="text-sm md:text-base font-bold text-slate-700 block mt-0.5">95% liên quan đến nhiễm 14 type HPV nguy cơ cao</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- CỤM THẺ 2 -->
-                <div class="bg-white p-6 md:p-10 rounded-[2.5rem] shadow-xs flex flex-col justify-between border border-slate-100">
+                <div class="bg-white p-5 md:p-8 rounded-[2rem] shadow-sm flex flex-col justify-between border border-purple-100/50">
                     <div>
-                        <div class="flex items-center justify-between border-b border-purple-100 pb-4 mb-6">
+                        <div class="flex items-center justify-between border-b border-purple-100 pb-3 mb-4">
                             <h3 class="text-xs md:text-sm font-extrabold text-purple-700 tracking-wider uppercase">🔮 Ung Thư Nội Mạc Tử Cung</h3>
-                            <span class="text-[9px] font-bold text-purple-700 bg-purple-50 px-2.5 py-0.5 rounded uppercase">Top 2 phổ biến ở nước đang phát triển</span>
+                            <span class="text-[9px] font-bold text-purple-700 bg-purple-50 px-2.5 py-0.5 rounded uppercase">Top 2 phổ biến</span>
                         </div>
                         
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="bg-slate-50 p-4 rounded-xl">
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 text-center sm:text-left">
                                 <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Mắc mới mỗi năm</span>
-                                <span class="text-xl md:text-3xl font-black text-slate-800 block mt-1">420.000</span>
+                                <span class="text-2xl sm:text-3xl md:text-4xl font-black text-evaDarkBlue block mt-1 tracking-tight">420.<span class="text-evaBlue">000</span></span>
                             </div>
-                            <div class="bg-slate-50 p-4 rounded-xl">
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 text-center sm:text-left">
                                 <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Tử vong mỗi năm</span>
-                                <span class="text-xl md:text-3xl font-black text-slate-800 block mt-1">98.000</span>
+                                <span class="text-2xl sm:text-3xl md:text-4xl font-black text-slate-800 block mt-1 tracking-tight">98.<span class="text-amber-500">000</span></span>
                             </div>
-                            <div class="col-span-2 bg-purple-50/40 p-4 rounded-xl border border-purple-100/30">
+                            <div class="col-span-2 bg-purple-50/40 p-3 rounded-lg border border-purple-100/30">
                                 <span class="text-[10px] font-bold text-purple-700 uppercase tracking-wider block">Tỷ lệ tăng trưởng dịch tễ</span>
-                                <span class="text-base md:text-lg font-bold text-red-500 block mt-0.5">Tăng đáng báo động 130% trong 30 năm qua</span>
+                                <span class="text-sm md:text-base font-bold text-red-500 block mt-0.5">Tăng đáng báo động 130% trong 30 năm qua</span>
                             </div>
                         </div>
                     </div>
@@ -167,16 +144,151 @@
         </div>
     </section>
 
-    <!-- SECTION 4: LEAD GENERATION (GIAO DIỆN FORM ĐƯỢC TỐI ƯU SANG TRỌNG) -->
-    <section id="register-block" class="py-16 md:py-28 bg-white registration-section relative overflow-hidden">
+    <div class="bg-slate-50 py-3.5 border-b border-slate-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+            <a href="#register-block" class="inline-block bg-red-50/80 hover:bg-red-100 border border-red-200/50 px-5 py-2.5 rounded-xl transition-all duration-300 transform hover:scale-[1.01] active:scale-[0.99] cursor-pointer w-full shadow-3xs">
+                <p class="text-xs sm:text-sm text-red-600 font-extrabold tracking-wide uppercase flex items-center justify-center gap-2">
+                    ⚠️ 90% CÓ THỂ CHỮA KHỎI NẾU ĐƯỢC PHÁT HIỆN Ở GIAI ĐOẠN SỚM
+                </p>
+            </a>
+        </div>
+    </div>
+
+    <section class="py-10 md:py-16 bg-white border-b border-slate-100">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 relative">
+            <div class="text-center max-w-2xl mx-auto mb-6">
+                <h2 class="text-xl md:text-2xl font-black text-evaDarkBlue tracking-tight uppercase">Ý Kiến Chuyên Gia & KOLs</h2>
+                <p class="text-slate-400 font-medium text-xs mt-1">Góc nhìn chuyên môn và thông điệp truyền cảm hứng bảo vệ sức khỏe.</p>
+            </div>
+            
+            <div class="flex overflow-x-auto gap-4 pb-2 no-scrollbar snap-x snap-mandatory px-1 md:grid md:grid-cols-3 md:overflow-x-visible md:snap-none">
+                <div class="min-w-[80%] sm:min-w-[45%] md:min-w-0 bg-slate-50/60 p-3 rounded-xl border border-slate-100 snap-center">
+                    <div class="relative rounded-lg overflow-hidden bg-slate-900 aspect-video shadow-3xs">
+                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/xRoL8Cpc5Uk" title="KOL Voice 1" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="mt-2.5 px-0.5">
+                        <h4 class="font-bold text-xs md:text-sm text-evaDarkBlue line-clamp-1">Chuyên Gia Y Tế Chia Sẻ</h4>
+                        <p class="text-[11px] text-slate-400 font-medium mt-0.5 line-clamp-1">Tầm quan trọng của công nghệ tầm soát bằng Gen.</p>
+                    </div>
+                </div>
+
+                <div class="min-w-[80%] sm:min-w-[45%] md:min-w-0 bg-slate-50/60 p-3 rounded-xl border border-slate-100 snap-center">
+                    <div class="relative rounded-lg overflow-hidden bg-slate-900 aspect-video shadow-3xs">
+                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/xRoL8Cpc5Uk" title="KOL Voice 2" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="mt-2.5 px-0.5">
+                        <h4 class="font-bold text-xs md:text-sm text-evaDarkBlue line-clamp-1">Góc Nhìn Khách Mời Thủy Tiên</h4>
+                        <p class="text-[11px] text-slate-400 font-medium mt-0.5 line-clamp-1">Lan tỏa lối sống lành mạnh, chủ động lắng nghe cơ thể.</p>
+                    </div>
+                </div>
+
+                <div class="min-w-[80%] sm:min-w-[45%] md:min-w-0 bg-slate-50/60 p-3 rounded-xl border border-slate-100 snap-center">
+                    <div class="relative rounded-lg overflow-hidden bg-slate-900 aspect-video shadow-3xs">
+                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/xRoL8Cpc5Uk" title="KOL Voice 3" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="mt-2.5 px-0.5">
+                        <h4 class="font-bold text-xs md:text-sm text-evaDarkBlue line-clamp-1">Thông Điệp Từ Chiến Dịch</h4>
+                        <p class="text-[11px] text-slate-400 font-medium mt-0.5 line-clamp-1">Hành trình mang giải pháp tiếp cận triệu phụ nữ.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 bg-slate-50 overflow-hidden border-b border-slate-100">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-8">
+                <h2 class="text-xl md:text-2xl font-extrabold text-evaDarkBlue uppercase tracking-tight">Cam Kết Hành Động Vì Cộng Đồng</h2>
+                <p class="text-xs text-slate-400 font-medium mt-1">Hình ảnh ghi nhận từ các buổi lễ ký kết biên bản ghi nhớ hợp tác chiến lược (MOU).</p>
+            </div>
+            
+            <div class="flex overflow-x-auto gap-4 md:grid md:grid-cols-2 lg:grid-cols-3 pb-2 no-scrollbar snap-x snap-mandatory px-1">
+                <div class="min-w-[85%] sm:min-w-[45%] lg:min-w-0 bg-white p-3.5 rounded-[1.5rem] border border-slate-200/50 snap-center flex flex-col justify-between shadow-3xs">
+                    <div class="bg-slate-100 aspect-[16/10] rounded-xl flex items-center justify-center text-slate-400 text-[10px] font-bold p-3 text-center">[ Hình ảnh ký kết MOU với Bệnh viện A ]</div>
+                    <h4 class="font-bold text-xs md:text-sm text-evaDarkBlue line-clamp-2 mt-2 leading-relaxed">Hợp tác chiến lược đẩy mạnh công tác tầm soát ung thư phụ khoa cùng Bệnh viện A</h4>
+                    <a href="#" class="text-[10px] font-bold text-evaPink tracking-wider uppercase mt-3 inline-block hover:underline">Chi tiết sự kiện →</a>
+                </div>
+                <div class="min-w-[85%] sm:min-w-[45%] lg:min-w-0 bg-white p-3.5 rounded-[1.5rem] border border-slate-200/50 snap-center flex flex-col justify-between shadow-3xs">
+                    <div class="bg-slate-100 aspect-[16/10] rounded-xl flex items-center justify-center text-slate-400 text-[10px] font-bold p-3 text-center">[ Hình ảnh ký kết MOU với Bệnh viện B ]</div>
+                    <h4 class="font-bold text-xs md:text-sm text-evaDarkBlue line-clamp-2 mt-2 leading-relaxed">Triển khai quỹ hỗ trợ xét nghiệm sinh học phân tử tiên tiến phối hợp với Bệnh viện B</h4>
+                    <a href="#" class="text-[10px] font-bold text-evaPink tracking-wider uppercase mt-3 inline-block hover:underline">Chi tiết sự kiện →</a>
+                </div>
+                <div class="min-w-[85%] sm:min-w-[45%] lg:min-w-0 bg-white p-3.5 rounded-[1.5rem] border border-slate-200/50 snap-center flex flex-col justify-between shadow-3xs">
+                    <div class="bg-slate-100 aspect-[16/10] rounded-xl flex items-center justify-center text-slate-400 text-[10px] font-bold p-3 text-center">[ Hình ảnh lễ phát động dự án CSR ]</div>
+                    <h4 class="font-bold text-xs md:text-sm text-evaDarkBlue line-clamp-2 mt-2 leading-relaxed">Gene Solutions kết hợp cùng các tổ chức y tế phát động hành trình "Tín Hiệu EVA"</h4>
+                    <a href="#" class="text-[10px] font-bold text-evaPink tracking-wider uppercase mt-3 inline-block hover:underline">Chi tiết sự kiện →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-10 bg-white text-center border-b border-slate-100">
+        <div class="max-w-5xl mx-auto px-4">
+            <h3 class="text-[10px] font-bold uppercase text-slate-400 tracking-widest mb-4">Mạng Lưới Bảo Trợ Chuyên Môn Uy Tín</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 items-center justify-items-center opacity-85">
+                <div class="bg-slate-50 py-3 px-3 rounded-lg border border-slate-100 w-full text-center text-[11px] font-bold text-slate-500 shadow-3xs">Bệnh viện Từ Dũ</div>
+                <div class="bg-slate-50 py-3 px-3 rounded-lg border border-slate-100 w-full text-center text-[11px] font-bold text-slate-500 shadow-3xs">Hệ thống Vinmec</div>
+                <div class="bg-slate-50 py-3 px-3 rounded-lg border border-slate-100 w-full text-center text-[11px] font-bold text-slate-500 shadow-3xs">Hội LH Phụ Nữ</div>
+                <div class="bg-slate-50 py-3 px-3 rounded-lg border border-slate-100 w-full text-center text-[11px] font-bold text-slate-500 shadow-3xs">Gene Solutions</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 md:py-20 bg-slate-50 border-b border-slate-100">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="text-center max-w-2xl mx-auto mb-8">
+                <h2 class="text-2xl md:text-3xl font-black text-evaDarkBlue tracking-tight uppercase">Kiến Thức Tầm Soát Ung Thư</h2>
+                <p class="text-slate-400 font-medium text-xs mt-1.5">Cập nhật thông tin y khoa chính thống giúp bạn chủ động bảo vệ bản thân.</p>
+            </div>
+
+            <div class="flex overflow-x-auto gap-5 pb-2 no-scrollbar snap-x snap-mandatory px-1 md:grid md:grid-cols-2 lg:grid-cols-3 md:overflow-x-visible md:snap-none">
+                <div class="min-w-[85%] sm:min-w-[48%] md:min-w-0 bg-white rounded-2xl overflow-hidden border border-slate-200/40 shadow-sm hover:shadow-md transition flex flex-col justify-between snap-center">
+                    <div class="bg-pink-100/50 aspect-[16/10] flex items-center justify-center text-slate-400 text-xs font-bold">[ Thumbnail Bài viết 1 ]</div>
+                    <div class="p-5 space-y-2 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[9px] font-bold text-evaPink tracking-widest uppercase bg-pink-50 px-2 py-0.5 rounded">Cổ Tử Cung</span>
+                            <h4 class="font-bold text-sm text-evaDarkBlue mt-1 line-clamp-2 leading-snug hover:text-evaPink cursor-pointer">Dấu hiệu nhận biết sớm Ung Thư Cổ Tử Cung qua các mốc tuổi</h4>
+                            <p class="text-slate-400 text-xs line-clamp-2 font-medium mt-1">Hiểu rõ về quy trình nhiễm HPV kéo dài và cách ngăn chặn tổn thương tiền ung thư.</p>
+                        </div>
+                        <a href="#" class="text-xs font-bold text-evaBlue hover:underline inline-block pt-1">Đọc bài viết →</a>
+                    </div>
+                </div>
+
+                <div class="min-w-[85%] sm:min-w-[48%] md:min-w-0 bg-white rounded-2xl overflow-hidden border border-slate-200/40 shadow-sm hover:shadow-md transition flex flex-col justify-between snap-center">
+                    <div class="bg-purple-100/40 aspect-[16/10] flex items-center justify-center text-slate-400 text-xs font-bold">[ Thumbnail Bài viết 2 ]</div>
+                    <div class="p-5 space-y-2 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[9px] font-bold text-purple-600 tracking-widest uppercase bg-purple-50 px-2 py-0.5 rounded">Nội Mạc Tử Cung</span>
+                            <h4 class="font-bold text-sm text-evaDarkBlue mt-1 line-clamp-2 leading-snug hover:text-evaPink cursor-pointer">Sự khác biệt giữa Ung thư Nội mạc tử cung và u xơ thông thường</h4>
+                            <p class="text-slate-400 text-xs line-clamp-2 font-medium mt-1">Các số liệu dịch tễ học mới cảnh báo nguy cơ tiềm ẩn ở độ tuổi tiền mãn kinh.</p>
+                        </div>
+                        <a href="#" class="text-xs font-bold text-evaBlue hover:underline inline-block pt-1">Đọc bài viết →</a>
+                    </div>
+                </div>
+
+                <div class="min-w-[85%] sm:min-w-[48%] md:min-w-0 bg-white rounded-2xl overflow-hidden border border-slate-200/40 shadow-sm hover:shadow-md transition flex flex-col justify-between snap-center">
+                    <div class="bg-blue-100/40 aspect-[16/10] flex items-center justify-center text-slate-400 text-xs font-bold">[ Thumbnail Bài viết 3 ]</div>
+                    <div class="p-5 space-y-2 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[9px] font-bold text-evaBlue tracking-widest uppercase bg-blue-50 px-2 py-0.5 rounded">Công Nghệ Gen</span>
+                            <h4 class="font-bold text-sm text-evaDarkBlue mt-1 line-clamp-2 leading-snug hover:text-evaPink cursor-pointer">Xét nghiệm SPOT-MAS EVA: Tầm soát ung thư từ DNA ngoại bào</h4>
+                            <p class="text-slate-400 text-xs line-clamp-2 font-medium mt-1">Bước tiến y học hiện đại giúp phát hiện tín hiệu bất thường sớm hơn trước khi tạo u.</p>
+                        </div>
+                        <a href="#" class="text-xs font-bold text-evaBlue hover:underline inline-block pt-1">Đọc bài viết →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="register-block" class="py-12 md:py-20 bg-white registration-section relative overflow-hidden">
         <div class="absolute -top-40 -left-40 w-96 h-96 bg-pink-100/30 rounded-full blur-3xl pointer-events-none"></div>
         <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-purple-100/20 rounded-full blur-3xl pointer-events-none"></div>
 
         <div class="max-w-5xl mx-auto px-4 form-container relative z-10">
-            <div class="bg-gradient-to-br from-slate-50 via-white to-pink-50/10 p-6 sm:p-12 md:p-16 rounded-[3rem] shadow-2xl shadow-slate-200/50 border border-slate-100 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="bg-gradient-to-br from-slate-50 via-white to-pink-50/10 p-5 sm:p-10 md:p-12 rounded-[2rem] shadow-2xl shadow-slate-200/50 border border-slate-100 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 
-                <!-- Cột trái: Thông điệp & Quyền lợi -->
-                <div class="lg:col-span-5 space-y-6 text-center lg:text-left">
+                <div class="lg:col-span-5 space-y-4 text-center lg:text-left">
                     <div class="inline-flex items-center gap-2 bg-white px-3 py-1 rounded-full border border-slate-200/60 shadow-3xs">
                         <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                         <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Hệ thống bảo mật y khoa</span>
@@ -188,9 +300,9 @@
                         Hãy chủ động bảo vệ sức khỏe của bản thân. Điền thông tin chính xác để nhận gói hỗ trợ tầm soát sớm từ chiến dịch <strong class="text-slate-700 font-semibold">Tín Hiệu Eva</strong>.
                     </p>
                     
-                    <div class="pt-4 border-t border-slate-200/60 hidden lg:block space-y-3.5">
+                    <div class="pt-3 border-t border-slate-200/60 hidden lg:block space-y-2">
                         <div class="flex items-center gap-3 text-xs font-semibold text-slate-500">
-                            <span class="text-base text-evaPink">✓</span> Miễn phí 100% chi phí tư vấn bác sĩ chuyên khoa.
+                            <span class="text-base text-evaPink">✓</span> Miễn phí 100% chi phí tư vấn bác sĩ.
                         </div>
                         <div class="flex items-center gap-3 text-xs font-semibold text-slate-500">
                             <span class="text-base text-evaPink">✓</span> Nhận ưu đãi đặc quyền từ quỹ Gene Solutions.
@@ -198,33 +310,30 @@
                     </div>
                 </div>
 
-                <!-- Cột phải: Form nhập dữ liệu cao cấp -->
-                <div class="lg:col-span-7 bg-white p-6 sm:p-8 rounded-2xl shadow-xl shadow-slate-100 border border-slate-100">
-                    <form id="eva-lead-form" class="space-y-6">
+                <div class="lg:col-span-7 bg-white p-5 sm:p-6 rounded-xl shadow-xl shadow-slate-100 border border-slate-100">
+                    <form id="eva-lead-form" class="space-y-5">
                         
                         <div class="input-group relative">
-                            <input type="text" name="name" placeholder="Họ và tên của bạn" required class="w-full h-12 px-1 border-b-2 border-slate-100 focus:border-evaPink focus:outline-none transition-all duration-300 text-sm text-slate-700 placeholder:text-slate-300 bg-transparent appearance-none font-medium">
-                            <span class="absolute right-2 bottom-3 text-slate-300 text-xs">👤</span>
+                            <input type="text" name="name" placeholder="Họ và tên của bạn" required class="w-full h-11 px-1 border-b-2 border-slate-100 focus:border-evaPink focus:outline-none transition-all duration-300 text-sm text-slate-700 placeholder:text-slate-300 bg-transparent appearance-none font-medium">
+                            <span class="absolute right-2 bottom-2.5 text-slate-300 text-xs">👤</span>
                         </div>
                         
                         <div class="input-group relative">
-                            <input type="tel" name="phone" placeholder="Số điện thoại liên hệ" pattern="[0-9]{10,11}" required class="w-full h-12 px-1 border-b-2 border-slate-100 focus:border-evaPink focus:outline-none transition-all duration-300 text-sm text-slate-700 placeholder:text-slate-300 bg-transparent appearance-none font-medium">
-                            <span class="absolute right-2 bottom-3 text-slate-300 text-xs">📞</span>
+                            <input type="tel" name="phone" placeholder="Số điện thoại liên hệ" pattern="[0-9]{10,11}" required class="w-full h-11 px-1 border-b-2 border-slate-100 focus:border-evaPink focus:outline-none transition-all duration-300 text-sm text-slate-700 placeholder:text-slate-300 bg-transparent appearance-none font-medium">
+                            <span class="absolute right-2 bottom-2.5 text-slate-300 text-xs">📞</span>
                         </div>
                         
                         <div class="input-group relative">
-                            <input type="number" name="age" placeholder="Tuổi (Từ 18 – 100)" min="18" max="100" required class="w-full h-12 px-1 border-b-2 border-slate-100 focus:border-evaPink focus:outline-none transition-all duration-300 text-sm text-slate-700 placeholder:text-slate-300 bg-transparent appearance-none font-medium">
-                            <span class="absolute right-2 bottom-3 text-slate-300 text-xs">🎂</span>
+                            <input type="number" name="age" placeholder="Tuổi (Từ 18 – 100)" min="18" max="100" required class="w-full h-11 px-1 border-b-2 border-slate-100 focus:border-evaPink focus:outline-none transition-all duration-300 text-sm text-slate-700 placeholder:text-slate-300 bg-transparent appearance-none font-medium">
+                            <span class="absolute right-2 bottom-2.5 text-slate-300 text-xs">🎂</span>
                         </div>
                         
-                        <!-- Hidden UTM Fields -->
                         <input type="hidden" name="utm_source" id="utm_source">
                         <input type="hidden" name="utm_medium" id="utm_medium">
                         <input type="hidden" name="utm_campaign" id="utm_campaign">
                         
-                        <!-- Nút Submit Modern -->
-                        <div class="pt-4">
-                            <button type="submit" id="submitBtn" class="w-full h-14 bg-gradient-to-r from-evaPink via-[#d01c70] to-[#8b3391] text-white font-bold text-xs uppercase tracking-widest rounded-xl shadow-lg shadow-pink-500/20 hover:shadow-xl hover:shadow-pink-500/30 hover:scale-[1.01] active:scale-[0.99] transition-all duration-200 ease-out cursor-pointer flex items-center justify-center gap-2">
+                        <div class="pt-2">
+                            <button type="submit" id="submitBtn" class="w-full h-12 bg-gradient-to-r from-evaPink via-[#d01c70] to-[#8b3391] text-white font-bold text-xs uppercase tracking-widest rounded-lg shadow-md shadow-pink-500/20 hover:shadow-lg hover:scale-[1.01] active:scale-[0.99] transition-all duration-200 cursor-pointer flex items-center justify-center gap-2">
                                 <span>NHẬN TƯ VẤN MIỄN PHÍ NGAY</span>
                                 <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                             </button>
@@ -236,68 +345,22 @@
         </div>
     </section>
 
-    <!-- SECTION 5: SOCIAL PROOF (MOU) -->
-    <section class="py-16 bg-slate-50 overflow-hidden border-t border-slate-100">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="text-center mb-10">
-                <h2 class="text-xl md:text-2xl font-extrabold text-evaDarkBlue uppercase tracking-tight">Cam Kết Hành Động Vì Cộng Đồng</h2>
-                <p class="text-xs text-slate-400 font-medium mt-2">Hình ảnh ghi nhận từ các buổi lễ ký kết biên bản ghi nhớ hợp tác chiến lược (MOU).</p>
-            </div>
-            
-            <div class="flex overflow-x-auto gap-5 md:grid md:grid-cols-2 lg:grid-cols-3 pb-6 no-scrollbar snap-x snap-mandatory px-2">
-                <!-- Card 1 -->
-                <div class="min-w-[85%] sm:min-w-[45%] lg:min-w-0 bg-white p-4 rounded-[2rem] border border-slate-200/50 snap-center flex flex-col justify-between shadow-3xs">
-                    <div class="bg-slate-100 aspect-[16/10] rounded-2xl flex items-center justify-center text-slate-400 text-[10px] font-bold p-4 text-center">[ Hình ảnh ký kết MOU với Bệnh viện A ]</div>
-                    <h4 class="font-bold text-xs md:text-sm text-evaDarkBlue line-clamp-2 mt-3 leading-relaxed">Hợp tác chiến lược đẩy mạnh công tác tầm soát ung thư phụ khoa cùng Bệnh viện A</h4>
-                    <a href="#" class="text-[10px] font-bold text-evaPink tracking-wider uppercase mt-4 inline-block hover:underline">Chi tiết sự kiện →</a>
-                </div>
-                <!-- Card 2 -->
-                <div class="min-w-[85%] sm:min-w-[45%] lg:min-w-0 bg-white p-4 rounded-[2rem] border border-slate-200/50 snap-center flex flex-col justify-between shadow-3xs">
-                    <div class="bg-slate-100 aspect-[16/10] rounded-2xl flex items-center justify-center text-slate-400 text-[10px] font-bold p-4 text-center">[ Hình ảnh ký kết MOU với Bệnh viện B ]</div>
-                    <h4 class="font-bold text-xs md:text-sm text-evaDarkBlue line-clamp-2 mt-3 leading-relaxed">Triển khai quỹ hỗ trợ xét nghiệm sinh học phân tử tiên tiến phối hợp với Bệnh viện B</h4>
-                    <a href="#" class="text-[10px] font-bold text-evaPink tracking-wider uppercase mt-4 inline-block hover:underline">Chi tiết sự kiện →</a>
-                </div>
-                <!-- Card 3 -->
-                <div class="min-w-[85%] sm:min-w-[45%] lg:min-w-0 bg-white p-4 rounded-[2rem] border border-slate-200/50 snap-center flex flex-col justify-between shadow-3xs">
-                    <div class="bg-slate-100 aspect-[16/10] rounded-2xl flex items-center justify-center text-slate-400 text-[10px] font-bold p-4 text-center">[ Hình ảnh lễ phát động dự án CSR ]</div>
-                    <h4 class="font-bold text-xs md:text-sm text-evaDarkBlue line-clamp-2 mt-3 leading-relaxed">Gene Solutions kết hợp cùng các tổ chức y tế phát động hành trình "Tín Hiệu EVA"</h4>
-                    <a href="#" class="text-[10px] font-bold text-evaPink tracking-wider uppercase mt-4 inline-block hover:underline">Chi tiết sự kiện →</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 6: PARTNERSHIP -->
-    <section class="py-12 bg-white text-center">
-        <div class="max-w-5xl mx-auto px-4">
-            <h3 class="text-[10px] font-bold uppercase text-slate-400 tracking-widest mb-6">Mạng Lưới Bảo Trợ Chuyên Môn Uy Tín</h3>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 items-center justify-items-center opacity-85">
-                <div class="bg-slate-50 py-4 px-3 rounded-xl border border-slate-100 w-full text-center text-[11px] font-bold text-slate-500 shadow-3xs">Bệnh viện Từ Dũ</div>
-                <div class="bg-slate-50 py-4 px-3 rounded-xl border border-slate-100 w-full text-center text-[11px] font-bold text-slate-500 shadow-3xs">Hệ thống Vinmec</div>
-                <div class="bg-slate-50 py-4 px-3 rounded-xl border border-slate-100 w-full text-center text-[11px] font-bold text-slate-500 shadow-3xs">Hội LH Phụ Nữ</div>
-                <div class="bg-slate-50 py-4 px-3 rounded-xl border border-slate-100 w-full text-center text-[11px] font-bold text-slate-500 shadow-3xs">Gene Solutions</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="bg-gradient-to-b from-evaDarkBlue to-[#062042] text-white py-12 px-4 sm:px-6">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
+    <footer class="bg-gradient-to-b from-evaDarkBlue to-[#062042] text-white py-10 px-4 sm:px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
             <div>
                 <div class="font-extrabold text-base tracking-widest">GENE SOLUTIONS</div>
-                <p class="text-[11px] text-slate-400 mt-1 font-medium">Hệ thống công nghệ gen hàng đầu vì sức khỏe cộng đồng phụ nữ Việt</p>
+                <p class="text-[11px] text-slate-400 mt-0.5 font-medium">Hệ thống công nghệ gen hàng đầu vì sức khỏe cộng đồng phụ nữ Việt</p>
             </div>
-            <div class="bg-white/5 border border-white/10 px-6 py-4 rounded-xl flex items-center gap-4 backdrop-blur-md w-full md:w-auto justify-center">
+            <div class="bg-white/5 border border-white/10 px-5 py-3 rounded-lg flex items-center gap-4 backdrop-blur-md w-full md:w-auto justify-center">
                 <span class="text-xl">📞</span>
                 <div class="text-left">
                     <p class="text-[9px] text-slate-400 font-bold uppercase tracking-widest">Hotline tư vấn miễn phí</p>
-                    <a href="tel:02871018688" class="text-base font-bold text-white hover:text-evaPink transition tracking-wider">0287 101 8688</a>
+                    <a href="tel:02871018688" class="text-sm font-bold text-white hover:text-evaPink transition tracking-wider">0287 101 8688</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- REALTIME SCRIPT INTERGRATION WITH REDIRECT LOGIC -->
     <script>
         window.addEventListener('DOMContentLoaded', () => {
             const scriptURL = 'https://script.google.com/macros/s/AKfycbyjHrkvUiHy4j1xiNzFKbgmvNAvDQJywyRi6EpZcF2aIlNXPKYxZoNgu03yC1rr6Sys/exec';
@@ -327,17 +390,15 @@
                 fetch(scriptURL, { method: 'POST', body: new FormData(form)})
                     .then(response => {
                         form.reset();
-                        // Chuyển hướng sang trang cảm ơn khi API phản hồi thành công
                         window.location.href = 'thankyou.html';
                     })
                     .catch(error => {
                         btn.disabled = false;
-                        btn.innerHTML = `<span>ĐANG KÝ TẦM SOÁT NGAY</span><svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>`;
-                        alert('Hệ thống bận, vui lòng gửi lại thông tin sau ít phút!');
-                        console.error('Error!', error.message);
+                        btn.innerHTML = `<span>NHẬN TƯ VẤN MIỄN PHÍ NGAY</span><svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>`;
                     });
             });
         });
     </script>
+
 </body>
 </html>
