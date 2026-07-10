@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cảm ơn bạn - Tín Hiệu EVA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        evaPink: '#E5217B',
+                        evaDarkBlue: '#0A3975',
+                        evaSoftBg: '#FDF9FA'
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-evaSoftBg min-h-screen flex items-center justify-center p-4">
+
+    <div class="max-w-md w-full bg-white rounded-3xl shadow-xl p-8 text-center border border-pink-50">
+        <!-- Icon Success -->
+        <div class="w-20 h-20 bg-pink-50 rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg class="w-10 h-10 text-evaPink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+            </svg>
+        </div>
+
+        <!-- Nội dung -->
+        <h1 class="text-2xl font-black text-evaDarkBlue mb-3 uppercase tracking-tight">Đăng ký thành công!</h1>
+        <p class="text-slate-500 text-sm leading-relaxed mb-8">
+            Cảm ơn bạn đã tin tưởng <strong>Tín Hiệu Eva</strong>. Chuyên viên tư vấn của chúng tôi sẽ liên hệ với bạn trong vòng <strong>24h làm việc</strong> để hỗ trợ chi tiết.
+        </p>
+
+        <!-- Thông tin hỗ trợ -->
+        <div class="bg-slate-50 rounded-xl p-4 mb-8 text-left border border-slate-100">
+            <p class="text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-2">Bạn cần hỗ trợ khẩn cấp?</p>
+            <div class="flex items-center gap-3">
+                <span class="text-xl">📞</span>
+                <div>
+                    <a href="tel:02871018688" class="text-sm font-bold text-evaDarkBlue hover:text-evaPink transition">0287 101 8688</a>
+                    <p class="text-[10px] text-slate-400">Tổng đài hỗ trợ 24/7</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nút quay về -->
+        <a href="index.html" class="block w-full bg-evaDarkBlue text-white font-bold py-3 rounded-xl text-[12px] uppercase tracking-widest hover:bg-evaPink transition-all duration-300">
+            Quay lại trang chủ
+        </a>
+    </div>
+
+</body>
+</html>
