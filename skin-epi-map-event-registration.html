@@ -26,8 +26,8 @@
         }
 
         body { 
-            width: 100%; /* Đã chỉnh full trang */
-            max-width: 100%; /* Bỏ giới hạn 640px để tràn full trang */
+            width: 100%;
+            max-width: 100%;
             font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif; 
             margin: 0; 
             padding: 16px; 
@@ -37,12 +37,11 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* --- Container Form Card --- */
         .form-card {
-            width: 100%; /* Form chiếm 100% chiều rộng */
+            width: 100%;
             background: var(--card-bg);
             border-radius: 16px;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
             overflow: hidden;
             border: 1px solid var(--border-color);
         }
@@ -54,7 +53,6 @@
             border-bottom: 1px solid var(--border-color);
         }
 
-        /* --- Intro Section --- */
         .form-intro { 
             padding: 24px; 
             background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%);
@@ -92,7 +90,6 @@
             color: var(--medical-green);
         }
 
-        /* --- Form Fields --- */
         .form-body {
             padding: 24px;
             display: flex;
@@ -112,15 +109,9 @@
             color: var(--text-main);
         }
 
-        .required-star {
-            color: #ef4444;
-            margin-left: 2px;
-        }
+        .required-star { color: #ef4444; margin-left: 2px; }
 
-        input[type="text"],
-        input[type="email"],
-        input[type="tel"],
-        textarea { 
+        input[type="text"], input[type="email"], input[type="tel"], textarea { 
             width: 100%; 
             padding: 12px 14px; 
             border: 1px solid var(--border-color); 
@@ -132,16 +123,6 @@
             transition: all 0.2s ease;
         }
 
-        input::placeholder, textarea::placeholder {
-            color: #94a3b8;
-            font-size: 13.5px;
-        }
-
-        input:hover, textarea:hover {
-            border-color: #cbd5e1;
-            background-color: #ffffff;
-        }
-
         input:focus, textarea:focus { 
             outline: none;
             border-color: var(--primary);
@@ -149,12 +130,8 @@
             box-shadow: 0 0 0 4px var(--focus-ring);
         }
 
-        textarea { 
-            resize: vertical; 
-            min-height: 90px; 
-        }
+        textarea { resize: vertical; min-height: 90px; }
 
-        /* --- Submit Button --- */
         button#submitBtn {
             font-family: inherit;
             font-size: 15px; 
@@ -171,27 +148,14 @@
             margin-top: 6px;
         }
 
-        button#submitBtn:hover {
-            opacity: 0.95;
-            transform: translateY(-1px);
-            box-shadow: 0 6px 16px rgba(13, 148, 136, 0.3);
-        }
+        button#submitBtn:hover { opacity: 0.95; transform: translateY(-1px); }
+        button:disabled { background: #cbd5e1 !important; cursor: not-allowed; }
 
-        button:disabled { 
-            background: #cbd5e1 !important; 
-            cursor: not-allowed;
-            transform: none !important;
-            box-shadow: none !important;
-        }
-
-        /* --- Pop-up Overlay --- */
         #popup-overlay {
             display: none; 
             position: fixed; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%;
+            top: 0; left: 0; 
+            width: 100%; height: 100%;
             background: rgba(15, 23, 42, 0.6); 
             backdrop-filter: blur(4px);
             z-index: 10000; 
@@ -209,27 +173,29 @@
             max-width: 380px; 
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
             position: relative;
-            animation: popIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        @keyframes popIn {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
         }
 
         #close-popup {
             position: absolute; 
-            top: 14px; 
-            right: 18px; 
+            top: 14px; right: 18px; 
             font-size: 20px; 
             color: #94a3b8; 
             cursor: pointer; 
-            transition: color 0.2s;
         }
-        #close-popup:hover { color: var(--text-main); }
 
         #popup-content h3 { color: #059669; margin-bottom: 8px; font-size: 20px; font-weight: 700; }
-        #popup-content p { margin-bottom: 24px; line-height: 1.5; color: var(--text-muted); font-size: 14px; }
+        #popup-content p { margin-bottom: 16px; line-height: 1.5; color: var(--text-muted); font-size: 14px; }
+        
+        .lead-id-display {
+            font-size: 12px;
+            background: #f1f5f9;
+            padding: 6px 12px;
+            border-radius: 6px;
+            color: #475569;
+            margin-bottom: 20px;
+            display: inline-block;
+            font-family: monospace;
+        }
 
         .zalo-btn {
             display: block; 
@@ -240,26 +206,22 @@
             border-radius: 10px;
             font-weight: 600; 
             font-size: 15px; 
-            box-shadow: 0 4px 14px rgba(0, 104, 255, 0.3);
             cursor: pointer; 
             border: none; 
             width: 100%;
-            transition: all 0.2s;
         }
-        .zalo-btn:hover { background: #0056d6; }
 
-        /* --- Badge Đếm Lead (Chuyển sang góc DƯỚI BÊN TRÁI) --- */
         #lead-counter-badge {
             position: fixed;
             bottom: 16px;
-            left: 16px; /* Đổi sang góc dưới bên trái để tránh nút Chat */
+            left: 16px;
             background: #0f172a;
             color: #38bdf8;
             font-size: 12px;
             font-weight: 600;
             padding: 8px 14px;
             border-radius: 20px;
-            z-index: 999999; /* Đảm bảo nổi hẳn lên trên cùng */
+            z-index: 999999;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.15);
         }
@@ -290,43 +252,38 @@
             </div>
         
             <div class="form-body">
-                <!-- 1. Họ và tên -->
                 <div class="field-group">
                     <label class="field-label">Họ và tên của Quý Bác sĩ/Chuyên Gia<span class="required-star">*</span></label>
                     <input type="text" name="name" placeholder="Nhập họ và tên..." required>
                 </div>
                 
-                <!-- 2. Email -->
                 <div class="field-group">
                     <label class="field-label">Địa chỉ email<span class="required-star">*</span></label>
                     <input type="email" name="email" placeholder="example@domain.com" required>
                 </div>
                 
-                <!-- 3. Số điện thoại -->
                 <div class="field-group">
                     <label class="field-label">Số điện thoại liên hệ<span class="required-star">*</span></label>
                     <input type="tel" name="phone" placeholder="Nhập số điện thoại (10 chữ số)" pattern="[0-9]{10}" title="Vui lòng nhập đúng 10 chữ số" required>
                 </div>
                 
-                <!-- 4. Nơi công tác -->
                 <div class="field-group">
                     <label class="field-label">Nơi công tác hiện tại<span class="required-star">*</span></label>
                     <input type="text" name="workplace" placeholder="Bệnh viện / Phòng khám / Cơ sở công tác..." required>
                 </div>
                 
-                <!-- 5. Địa chỉ nhận hàng mẫu/test -->
                 <div class="field-group">
                     <label class="field-label">Địa chỉ nhận tài liệu / Hàng mẫu<span class="required-star">*</span></label>
                     <input type="text" name="address" placeholder="Nhập địa chỉ chi tiết để gửi tài liệu/mẫu test..." required>
                 </div>
                 
-                <!-- 6. Câu hỏi cho diễn giả -->
                 <div class="field-group">
                     <label class="field-label">Câu hỏi dành cho BTC & Diễn giả</label>
                     <textarea name="question" placeholder="Nhập câu hỏi hoặc nội dung Quý Bác sĩ muốn trao đổi thêm..."></textarea>
                 </div>
                 
-                <!-- UTM Params -->
+                <!-- Mã Đối Chiếu Lead & UTM -->
+                <input type="hidden" name="lead_id" id="lead_id">
                 <input type="hidden" name="utm_source" id="utm_source">
                 <input type="hidden" name="utm_medium" id="utm_medium">
                 <input type="hidden" name="utm_campaign" id="utm_campaign">
@@ -336,17 +293,16 @@
         </form>
     </div>
 
-    <!-- Pop-up Overlay -->
     <div id="popup-overlay">
         <div id="popup-content">
             <span id="close-popup">&times;</span>
             <h3>Đăng Ký Thành Công!</h3>
             <p>Cảm ơn Quý Bác sĩ/Chuyên gia đã đăng ký.</p>
+            <div class="lead-id-display">Mã đăng ký: <span id="display_lead_id">---</span></div>
             <button type="button" class="zalo-btn" id="btnRedirect">TÌM HIỂU THÊM</button>
         </div>
     </div>
 
-    <!-- Badge hiển thị đếm Lead đặt ở góc dưới bên trái -->
     <div id="lead-counter-badge">📊 Local Leads: <span id="local-lead-count">0</span></div>
 
 <script>
@@ -360,27 +316,33 @@
         const btnRedirect = document.getElementById('btnRedirect');
         const closePopup = document.getElementById('close-popup');
         const leadCounterSpan = document.getElementById('local-lead-count');
+        const displayLeadId = document.getElementById('display_lead_id');
 
-        // --- HÀM XỬ LÝ LOCALSTORAGE TRACKING (CÁCH 1) ---
+        // 1. Hàm tạo Mã Đối Chiếu Duy Nhất (Lead ID)
+        function generateLeadID() {
+            const dateStr = new Date().toISOString().slice(0,10).replace(/-/g, '');
+            const randomStr = Math.random().toString(36).substring(2, 6).toUpperCase();
+            return `SNF-${dateStr}-${randomStr}`;
+        }
+
+        // 2. Quản lý Local Data trên máy Bác sĩ
         function updateLocalLeadCount() {
             const count = parseInt(localStorage.getItem('local_lead_count') || '0');
             leadCounterSpan.innerText = count;
         }
 
-        function recordNewLead(dataObj) {
+        function saveLeadToLocalStorage(dataObj) {
             let currentCount = parseInt(localStorage.getItem('local_lead_count') || '0') + 1;
             localStorage.setItem('local_lead_count', currentCount);
 
             let leadLogs = JSON.parse(localStorage.getItem('local_lead_logs') || '[]');
             leadLogs.push({
                 timestamp: new Date().toLocaleString('vi-VN'),
+                status: 'submitted',
                 data: dataObj
             });
             localStorage.setItem('local_lead_logs', JSON.stringify(leadLogs));
-
             updateLocalLeadCount();
-            console.log(`✅ [LEAD TRACKER] Tổng số lead đã gửi thành công trên thiết bị này: ${currentCount}`);
-            console.log('📌 Danh sách lead đã lưu trong Local Storage:', leadLogs);
         }
 
         updateLocalLeadCount();
@@ -388,11 +350,7 @@
         function getParam(name) {
             let urlParams = new URLSearchParams(window.location.search);
             if (!urlParams.has(name)) {
-                try {
-                    urlParams = new URLSearchParams(window.top.location.search);
-                } catch (e) {
-                    // Ignore cross-origin error
-                }
+                try { urlParams = new URLSearchParams(window.top.location.search); } catch (e) {}
             }
             return urlParams.get(name) || '';
         }
@@ -401,9 +359,7 @@
         document.getElementById('utm_medium').value = getParam('utm_medium');
         document.getElementById('utm_campaign').value = getParam('utm_campaign');
 
-        btnRedirect.addEventListener('click', () => {
-            window.top.location.href = zaloLink; 
-        });
+        btnRedirect.addEventListener('click', () => { window.top.location.href = zaloLink; });
 
         closePopup.addEventListener('click', () => {
             overlay.style.display = 'none';
@@ -417,6 +373,11 @@
                 btn.disabled = true;
                 btn.innerText = 'Đang xử lý...';
                 
+                // Tạo Lead ID cho lượt đăng ký này
+                const currentLeadID = generateLeadID();
+                document.getElementById('lead_id').value = currentLeadID;
+                displayLeadId.innerText = currentLeadID;
+
                 const formData = new FormData(form);
                 const params = new URLSearchParams();
                 const leadDataObj = {};
@@ -426,6 +387,10 @@
                     leadDataObj[key] = value;
                 });
 
+                // Lưu dữ liệu ngay lập tức vào máy người dùng để phòng lỗi mạng
+                saveLeadToLocalStorage(leadDataObj);
+
+                // Gửi sang Google Sheet
                 fetch(scriptURL, { 
                     method: 'POST', 
                     mode: 'no-cors', 
@@ -433,12 +398,11 @@
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
                 })
                 .then(() => {
-                    recordNewLead(leadDataObj);
                     overlay.style.display = 'flex';
                 })
-                .catch(() => {
-                    recordNewLead(leadDataObj);
-                    overlay.style.display = 'flex';
+                .catch((err) => {
+                    console.error('Lỗi kết nối khi gửi lead:', err);
+                    overlay.style.display = 'flex'; // Vẫn mở thông báo cho người dùng
                 });
             });
         }
