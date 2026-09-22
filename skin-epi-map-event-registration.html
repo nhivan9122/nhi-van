@@ -25,7 +25,6 @@
             padding: 0;
         }
 
-        /* --- TỐI ƯU CẤU TRÚC HIỂN THỊ TRONG IFRAME --- */
         html, body {
             width: 100% !important;
             max-width: 100% !important;
@@ -52,7 +51,7 @@
             box-shadow: none !important;
             overflow: hidden;
             border: none !important;
-            padding-bottom: 20px; /* Bớt lề khoảng trắng thừa dưới nút bấm */
+            padding-bottom: 20px;
         }
 
         .banner-img {
@@ -281,7 +280,6 @@
                     <textarea name="question" placeholder="Nhập câu hỏi hoặc nội dung Quý Bác sĩ muốn trao đổi thêm..."></textarea>
                 </div>
                 
-                <!-- Mã Đối Chiếu Lead & UTM (Gửi ngầm sang Google Sheet) -->
                 <input type="hidden" name="lead_id" id="lead_id">
                 <input type="hidden" name="utm_source" id="utm_source">
                 <input type="hidden" name="utm_medium" id="utm_medium">
@@ -306,16 +304,15 @@
 
 <script>
     window.addEventListener('DOMContentLoaded', () => {
-        // Tự động đo chiều cao thực tế chính xác & gửi sang WordPress
         function sendHeight() {
-            const height = document.documentElement.offsetHeight || document.body.scrollHeight;
-            window.parent.postMessage({ formFrameHeight: height }, '*');
+            const height = document.documentElement.offsetHeight || document.body.scrollHeight || 950;
+            window.parent.postMessage({ formFrameHeight: height, frameHeight: height }, '*');
         }
 
         window.addEventListener('load', sendHeight);
         window.addEventListener('resize', sendHeight);
+        setTimeout(sendHeight, 500); // Gửi thêm 1 lần sau 0.5s để đảm bảo load ảnh xong
 
-        // Theo dõi sự thay đổi kích thước DOM linh hoạt
         if (window.ResizeObserver) {
             new ResizeObserver(sendHeight).observe(document.body);
         }
