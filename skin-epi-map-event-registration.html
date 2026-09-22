@@ -26,10 +26,11 @@
         }
 
         body { 
-            max-width: 640px; 
+            width: 100%; /* Đã chỉnh full trang */
+            max-width: 100%; /* Bỏ giới hạn 640px để tràn full trang */
             font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif; 
-            margin: 0 auto; 
-            padding: 24px 16px; 
+            margin: 0; 
+            padding: 16px; 
             background-color: var(--bg-color); 
             color: var(--text-main);
             line-height: 1.5;
@@ -38,6 +39,7 @@
 
         /* --- Container Form Card --- */
         .form-card {
+            width: 100%; /* Form chiếm 100% chiều rộng */
             background: var(--card-bg);
             border-radius: 16px;
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
@@ -60,7 +62,7 @@
         }
 
         .form-intro h2 { 
-            font-size: 20px; 
+            font-size: 22px; 
             font-weight: 700; 
             color: #065f46; 
             margin-bottom: 16px;
@@ -78,7 +80,7 @@
             display: flex;
             align-items: flex-start;
             gap: 10px;
-            font-size: 13.5px;
+            font-size: 14px;
             color: #334155;
         }
 
@@ -105,7 +107,7 @@
         }
 
         .field-label {
-            font-size: 13px;
+            font-size: 13.5px;
             font-weight: 600;
             color: var(--text-main);
         }
@@ -246,21 +248,20 @@
         }
         .zalo-btn:hover { background: #0056d6; }
 
-        /* --- Badge Đối Chiếu Lead (Local Counter) --- */
+        /* --- Badge Đếm Lead (Chuyển sang góc DƯỚI BÊN TRÁI) --- */
         #lead-counter-badge {
             position: fixed;
-            bottom: 12px;
-            right: 12px;
-            background: rgba(15, 23, 42, 0.85);
+            bottom: 16px;
+            left: 16px; /* Đổi sang góc dưới bên trái để tránh nút Chat */
+            background: #0f172a;
             color: #38bdf8;
-            font-size: 11px;
+            font-size: 12px;
             font-weight: 600;
-            padding: 6px 12px;
+            padding: 8px 14px;
             border-radius: 20px;
-            z-index: 9999;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(4px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 999999; /* Đảm bảo nổi hẳn lên trên cùng */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.15);
         }
     </style>
 </head>
@@ -345,7 +346,7 @@
         </div>
     </div>
 
-    <!-- Nút nhỏ đếm Lead ở góc phải màn hình -->
+    <!-- Badge hiển thị đếm Lead đặt ở góc dưới bên trái -->
     <div id="lead-counter-badge">📊 Local Leads: <span id="local-lead-count">0</span></div>
 
 <script>
@@ -367,11 +368,9 @@
         }
 
         function recordNewLead(dataObj) {
-            // 1. Tăng tổng số count
             let currentCount = parseInt(localStorage.getItem('local_lead_count') || '0') + 1;
             localStorage.setItem('local_lead_count', currentCount);
 
-            // 2. Lưu nhật ký chi tiết dạng danh sách JSON
             let leadLogs = JSON.parse(localStorage.getItem('local_lead_logs') || '[]');
             leadLogs.push({
                 timestamp: new Date().toLocaleString('vi-VN'),
@@ -379,13 +378,11 @@
             });
             localStorage.setItem('local_lead_logs', JSON.stringify(leadLogs));
 
-            // 3. Cập nhật giao diện badge & log ra Console
             updateLocalLeadCount();
             console.log(`✅ [LEAD TRACKER] Tổng số lead đã gửi thành công trên thiết bị này: ${currentCount}`);
             console.log('📌 Danh sách lead đã lưu trong Local Storage:', leadLogs);
         }
 
-        // Khởi tạo hiển thị đếm số lead khi vừa tải trang
         updateLocalLeadCount();
 
         function getParam(name) {
@@ -436,11 +433,11 @@
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
                 })
                 .then(() => {
-                    recordNewLead(leadDataObj); // Ghi nhận lead vào LocalStorage
+                    recordNewLead(leadDataObj);
                     overlay.style.display = 'flex';
                 })
                 .catch(() => {
-                    recordNewLead(leadDataObj); // Ghi nhận lead ngay cả khi fetch báo lỗi no-cors
+                    recordNewLead(leadDataObj);
                     overlay.style.display = 'flex';
                 });
             });
