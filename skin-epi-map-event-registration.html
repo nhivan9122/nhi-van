@@ -245,6 +245,23 @@
             transition: all 0.2s;
         }
         .zalo-btn:hover { background: #0056d6; }
+
+        /* --- Badge Đối Chiếu Lead (Local Counter) --- */
+        #lead-counter-badge {
+            position: fixed;
+            bottom: 12px;
+            right: 12px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #38bdf8;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 20px;
+            z-index: 9999;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
     </style>
 </head>
 <body>
@@ -328,6 +345,9 @@
         </div>
     </div>
 
+    <!-- Nút nhỏ đếm Lead ở góc phải màn hình -->
+    <div id="lead-counter-badge">📊 Local Leads: <span id="local-lead-count">0</span></div>
+
 <script>
     window.addEventListener('DOMContentLoaded', () => {
         const scriptURL = 'https://script.google.com/macros/s/AKfycbwouLtacJJS9DSC5YtxwcDtRCr3arfgN-eV0moQfYQBFthlDMi2uGL30FTinYfdIbtzTg/exec';
@@ -338,6 +358,35 @@
         const overlay = document.getElementById('popup-overlay');
         const btnRedirect = document.getElementById('btnRedirect');
         const closePopup = document.getElementById('close-popup');
+        const leadCounterSpan = document.getElementById('local-lead-count');
+
+        // --- HÀM XỬ LÝ LOCALSTORAGE TRACKING (CÁCH 1) ---
+        function updateLocalLeadCount() {
+            const count = parseInt(localStorage.getItem('local_lead_count') || '0');
+            leadCounterSpan.innerText = count;
+        }
+
+        function recordNewLead(dataObj) {
+            // 1. Tăng tổng số count
+            let currentCount = parseInt(localStorage.getItem('local_lead_count') || '0') + 1;
+            localStorage.setItem('local_lead_count', currentCount);
+
+            // 2. Lưu nhật ký chi tiết dạng danh sách JSON
+            let leadLogs = JSON.parse(localStorage.getItem('local_lead_logs') || '[]');
+            leadLogs.push({
+                timestamp: new Date().toLocaleString('vi-VN'),
+                data: dataObj
+            });
+            localStorage.setItem('local_lead_logs', JSON.stringify(leadLogs));
+
+            // 3. Cập nhật giao diện badge & log ra Console
+            updateLocalLeadCount();
+            console.log(`✅ [LEAD TRACKER] Tổng số lead đã gửi thành công trên thiết bị này: ${currentCount}`);
+            console.log('📌 Danh sách lead đã lưu trong Local Storage:', leadLogs);
+        }
+
+        // Khởi tạo hiển thị đếm số lead khi vừa tải trang
+        updateLocalLeadCount();
 
         function getParam(name) {
             let urlParams = new URLSearchParams(window.location.search);
@@ -373,7 +422,12 @@
                 
                 const formData = new FormData(form);
                 const params = new URLSearchParams();
-                formData.forEach((value, key) => params.append(key, value));
+                const leadDataObj = {};
+
+                formData.forEach((value, key) => {
+                    params.append(key, value);
+                    leadDataObj[key] = value;
+                });
 
                 fetch(scriptURL, { 
                     method: 'POST', 
@@ -382,9 +436,11 @@
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
                 })
                 .then(() => {
+                    recordNewLead(leadDataObj); // Ghi nhận lead vào LocalStorage
                     overlay.style.display = 'flex';
                 })
                 .catch(() => {
+                    recordNewLead(leadDataObj); // Ghi nhận lead ngay cả khi fetch báo lỗi no-cors
                     overlay.style.display = 'flex';
                 });
             });
