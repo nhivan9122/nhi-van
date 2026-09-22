@@ -25,9 +25,16 @@
             padding: 0;
         }
 
-        body { 
-            width: 100%;
-            max-width: 100%;
+        /* --- ÉP FORM FULL TRÀN VIỀN PHÁ KHUNG WORDPRESS --- */
+        body, .form-card {
+            width: 100vw !important;
+            max-width: 100vw !important;
+            position: relative !important;
+            left: 50% !important;
+            right: 50% !important;
+            margin-left: -50vw !important;
+            margin-right: -50vw !important;
+            border-radius: 0 !important;
             font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif; 
             margin: 0; 
             padding: 16px; 
@@ -38,9 +45,7 @@
         }
 
         .form-card {
-            width: 100%;
             background: var(--card-bg);
-            border-radius: 16px;
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
             overflow: hidden;
             border: 1px solid var(--border-color);
@@ -151,6 +156,7 @@
         button#submitBtn:hover { opacity: 0.95; transform: translateY(-1px); }
         button:disabled { background: #cbd5e1 !important; cursor: not-allowed; }
 
+        /* Pop-up Overlay */
         #popup-overlay {
             display: none; 
             position: fixed; 
@@ -184,18 +190,7 @@
         }
 
         #popup-content h3 { color: #059669; margin-bottom: 8px; font-size: 20px; font-weight: 700; }
-        #popup-content p { margin-bottom: 16px; line-height: 1.5; color: var(--text-muted); font-size: 14px; }
-        
-        .lead-id-display {
-            font-size: 12px;
-            background: #f1f5f9;
-            padding: 6px 12px;
-            border-radius: 6px;
-            color: #475569;
-            margin-bottom: 20px;
-            display: inline-block;
-            font-family: monospace;
-        }
+        #popup-content p { margin-bottom: 24px; line-height: 1.5; color: var(--text-muted); font-size: 14px; }
 
         .zalo-btn {
             display: block; 
@@ -282,7 +277,7 @@
                     <textarea name="question" placeholder="Nhập câu hỏi hoặc nội dung Quý Bác sĩ muốn trao đổi thêm..."></textarea>
                 </div>
                 
-                <!-- Mã Đối Chiếu Lead & UTM -->
+                <!-- Mã Đối Chiếu Lead & UTM (Gửi ngầm sang Google Sheet) -->
                 <input type="hidden" name="lead_id" id="lead_id">
                 <input type="hidden" name="utm_source" id="utm_source">
                 <input type="hidden" name="utm_medium" id="utm_medium">
@@ -293,12 +288,12 @@
         </form>
     </div>
 
+    <!-- Pop-up Overlay (Đã bỏ dòng Mã đăng ký) -->
     <div id="popup-overlay">
         <div id="popup-content">
             <span id="close-popup">&times;</span>
             <h3>Đăng Ký Thành Công!</h3>
             <p>Cảm ơn Quý Bác sĩ/Chuyên gia đã đăng ký.</p>
-            <div class="lead-id-display">Mã đăng ký: <span id="display_lead_id">---</span></div>
             <button type="button" class="zalo-btn" id="btnRedirect">TÌM HIỂU THÊM</button>
         </div>
     </div>
@@ -316,16 +311,13 @@
         const btnRedirect = document.getElementById('btnRedirect');
         const closePopup = document.getElementById('close-popup');
         const leadCounterSpan = document.getElementById('local-lead-count');
-        const displayLeadId = document.getElementById('display_lead_id');
 
-        // 1. Hàm tạo Mã Đối Chiếu Duy Nhất (Lead ID)
         function generateLeadID() {
             const dateStr = new Date().toISOString().slice(0,10).replace(/-/g, '');
             const randomStr = Math.random().toString(36).substring(2, 6).toUpperCase();
             return `SNF-${dateStr}-${randomStr}`;
         }
 
-        // 2. Quản lý Local Data trên máy Bác sĩ
         function updateLocalLeadCount() {
             const count = parseInt(localStorage.getItem('local_lead_count') || '0');
             leadCounterSpan.innerText = count;
@@ -338,7 +330,6 @@
             let leadLogs = JSON.parse(localStorage.getItem('local_lead_logs') || '[]');
             leadLogs.push({
                 timestamp: new Date().toLocaleString('vi-VN'),
-                status: 'submitted',
                 data: dataObj
             });
             localStorage.setItem('local_lead_logs', JSON.stringify(leadLogs));
@@ -373,10 +364,8 @@
                 btn.disabled = true;
                 btn.innerText = 'Đang xử lý...';
                 
-                // Tạo Lead ID cho lượt đăng ký này
                 const currentLeadID = generateLeadID();
                 document.getElementById('lead_id').value = currentLeadID;
-                displayLeadId.innerText = currentLeadID;
 
                 const formData = new FormData(form);
                 const params = new URLSearchParams();
@@ -387,10 +376,8 @@
                     leadDataObj[key] = value;
                 });
 
-                // Lưu dữ liệu ngay lập tức vào máy người dùng để phòng lỗi mạng
                 saveLeadToLocalStorage(leadDataObj);
 
-                // Gửi sang Google Sheet
                 fetch(scriptURL, { 
                     method: 'POST', 
                     mode: 'no-cors', 
@@ -401,8 +388,8 @@
                     overlay.style.display = 'flex';
                 })
                 .catch((err) => {
-                    console.error('Lỗi kết nối khi gửi lead:', err);
-                    overlay.style.display = 'flex'; // Vẫn mở thông báo cho người dùng
+                    console.error('Lỗi gửi lead:', err);
+                    overlay.style.display = 'flex';
                 });
             });
         }
