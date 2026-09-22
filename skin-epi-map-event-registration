@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=""UTF-8"">
+    <meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">
+    <link rel=""preconnect"" href=""https://fonts.googleapis.com"">
+    <link rel=""preconnect"" href=""https://fonts.gstatic.com"" crossorigin>
+    <link href=""https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"" rel=""stylesheet"">
+    <style>
+        body { max-width: 600px; font-family: Inter, Arial ! diplomat; margin: 0 auto; padding: 15px; background: #f3f3f3; font-size: 14px; }
+        div.form-intro { font-family: Inter; font-size: 14px; padding: 10px; margin: 0 auto; line-height: 1.5; text-align: justify; }
+        input { font-family: Inter; width: 100%; padding: 12px; margin: 3px 0; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; font-size: 12px; }
+        
+        button#submitBtn {
+            font-family: Inter; font-size: 18px; width: 40%; padding: 12px; background: #007bff; color: white;
+            border: none; border-radius: 5px; cursor: pointer; font-weight: bold; display: block; margin: 16px auto 0;
+        }
+        button:disabled { background: #ccc; }
+
+        /* --- Pop-up Overlay --- */
+        #popup-overlay {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.8); z-index: 10000; justify-content: center; align-items: center;
+        }
+        #popup-content {
+            background: white; padding: 40px 25px 30px; border-radius: 12px; text-align: center;
+            width: 85%; max-width: 380px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            position: relative; /* Để đặt dấu X */
+        }
+
+        /* Nút dấu X để tắt */
+        #close-popup {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #999;
+            cursor: pointer;
+            line-height: 1;
+        }
+        #close-popup:hover { color: #333; }
+
+        #popup-content h3 { color: #28a745; margin-top: 0; font-size: 22px; }
+        #popup-content p { margin: 15px 0 25px; line-height: 1.5; color: #333; font-size: 15px; }
+
+        .zalo-btn {
+            display: block; background: #0068ff; color: white !important;
+            padding: 16px 20px; text-decoration: none; border-radius: 50px;
+            font-weight: bold; font-size: 17px; box-shadow: 0 4px 15px rgba(0,104,255,0.4);
+            cursor: pointer; border: none; width: 100%; box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+    <form id=""snf045-form"">
+        <img src=""https://vipcardtrisurenipt.genesolutions.vn/wp-content/uploads/2026/09/805027932_1122626746807914_3209206157956389593_n.jpg"" alt=""Banner Nhà Thuốc"" style=""width: 100%; display: block;"">
+        
+        <div class=""form-intro"">
+            <p>Cảm ơn Quý Dược sĩ đã quan tâm việc cập nhật thông tin chuyên môn cùng với Y360 Quý Dược sĩ vui lòng điền thông tin bên dưới nhằm được hỗ trợ tạo tài khoản học tập trên nền tảng Y360.</p>
+            <p>📲 Dược sĩ đừng quên kiểm tra Zalo để nhận thông tin đăng nhập nhé.</p>
+            <p>📌 Thông tin cá nhân sẽ được bảo mật, chỉ sử dụng với mục đích tạo tài khoản để Dược sĩ tham gia cập nhật kiến thức chuyên môn.</p>
+        </div>
+    
+        <input type=""text"" name=""name"" placeholder=""Họ và tên"" required>
+        <input type=""tel"" name=""phone"" placeholder=""Số điện thoại"" pattern=""[0-9]{10,11}"" required>
+        <input type=""email"" name=""email"" placeholder=""Email"" required>
+        <input type=""text"" name=""pharmacy_name"" placeholder=""Tên nhà thuốc"" required>
+        <input type=""text"" name=""province"" placeholder=""Tỉnh thành"" required>
+        
+        <input type=""hidden"" name=""utm_source"" id=""utm_source"">
+        <input type=""hidden"" name=""utm_medium"" id=""utm_medium"">
+        <input type=""hidden"" name=""utm_campaign"" id=""utm_campaign"">
+        
+        <button type=""submit"" id=""submitBtn"">ĐĂNG KÝ</button>
+    </form>
+
+    <div id=""popup-overlay"">
+        <div id=""popup-content"">
+            <span id=""close-popup"">&times;</span>
+            <h3>Đăng ký thành công!</h3>
+            <p>Kiểm tra ngay tin nhắn Zalo để nhận thông tin đăng nhập nhé.</p>
+            <button type=""button"" class=""zalo-btn"" id=""btnRedirect"">TRUY CẬP NGAY</button>
+        </div>
+    </div>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        // GIỮ NGUYÊN LINK CỦA BẠN
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwShh-ZumOa-qdPZhytR9iIRiXokegfGi9NzEalplxVkUZcG1Yn5ZlkbRuzKa3Cp1-5DA/exec';
+        const zaloLink = 'https://zalo.me/1788542680321016283';
+        
+        const form = document.getElementById('snf045-form');
+        const btn = document.getElementById('submitBtn');
+        const overlay = document.getElementById('popup-overlay');
+        const btnRedirect = document.getElementById('btnRedirect');
+        const closePopup = document.getElementById('close-popup');
+
+        // Hàm lấy UTM (Sửa lỗi không nhận diện được UTM khi nhúng WordPress)
+        function getParam(name) {
+            let urlParams = new URLSearchParams(window.location.search);
+            // Nếu không tìm thấy trong window hiện tại, thử lấy ở window cha (nếu là iframe)
+            if (!urlParams.has(name)) {
+                try {
+                    urlParams = new URLSearchParams(window.top.location.search);
+                } catch (e) {
+                    // Trình duyệt chặn quyền truy cập top window
+                }
+            }
+            return urlParams.get(name) || '';
+        }
+
+        // Gán UTM ngay khi load
+        document.getElementById('utm_source').value = getParam('utm_source');
+        document.getElementById('utm_medium').value = getParam('utm_medium');
+        document.getElementById('utm_campaign').value = getParam('utm_campaign');
+
+        // Chuyển hướng Zalo
+        btnRedirect.addEventListener('click', () => {
+            window.top.location.href = zaloLink; 
+        });
+
+        // Tắt Pop-up khi ấn dấu X
+        closePopup.addEventListener('click', () => {
+            overlay.style.display = 'none';
+            btn.disabled = false;
+            btn.innerText = 'ĐĂNG KÝ';
+        });
+
+        if (form) {
+            form.addEventListener('submit', e => {
+                e.preventDefault();
+                btn.disabled = true;
+                btn.innerText = 'Đang gửi...';
+                
+                const formData = new FormData(form);
+                const params = new URLSearchParams();
+                formData.forEach((value, key) => params.append(key, value));
+
+                fetch(scriptURL, { 
+                    method: 'POST', 
+                    mode: 'no-cors', 
+                    body: params.toString(),
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+                })
+                .then(() => {
+                    overlay.style.display = 'flex';
+                })
+                .catch(() => {
+                    overlay.style.display = 'flex';
+                });
+            });
+        }
+    });
+</script>
+</body>
+</html>
